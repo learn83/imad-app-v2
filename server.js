@@ -1,5 +1,5 @@
-var express = require('express');
-var morgan = require('morgan');
+var express = require('express'); //library for making html connections possible and for creating web serve 
+var morgan = require('morgan');  //for obtaining log info
 var path = require('path');
 
 var app = express();
@@ -7,6 +7,10 @@ app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+app.get('/articleOne',function(req,res){
+    res.send("Article one will be published here!");
 });
 
 app.get('/ui/style.css', function (req, res) {
